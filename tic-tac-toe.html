@@ -6,31 +6,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="/Users/Jimbo/WDI10/projects/tic-tac-toe-game/tic-tac-toe.css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito|Varela+Round" rel="stylesheet">
   <title>Tic Tac Toe</title>
 </head>
 
 <body>
-  <header>
-    <h1>tic tac toe</h1>
+  <header id="header">
+    <h1>naughts & crosses</h1>
+    <h5>*known as 'tick tack toe' in the land of the free</h5>
   </header>
+  <h5 id="player-one-winner">PLAYER ONE WINS!</h5>
+  <h5 id="player-two-winner">PLAYER TWO WINS!</h5>
+  <h5 id="draw">DRAW</h5>
 
   <table id="game-board">
     <tr>
-      <td class="top-left"></td>
-      <td class="top"></td>
-      <td class="top-right"></td>
+      <td id="1" class="top-left"></td>
+      <td id="2" class="top"></td>
+      <td id="3" class="top-right"></td>
     </tr>
     <tr>
-      <td class="left"></td>
-      <td></td>
-      <td class="right"></td>
+      <td id="4" class="left"></td>
+      <td id="5"></td>
+      <td id="6" class="right"></td>
     </tr>
     <tr>
-      <td class="bottom-left"></td>
-      <td class="bottom"></td>
-      <td class="bottom-right"></td>
+      <td id="7" class="bottom-left"></td>
+      <td id="8" class="bottom"></td>
+      <td id="9" class="bottom-right"></td>
     </tr>
   </table>
+
+  <div >
+    <h2 id="winner-alert"></h2>
+    <button id="reset">Play Again</button>
+  </div>
 
   <script src="/Users/Jimbo/WDI10/projects/tic-tac-toe-game/tic-tac-toe.js"></script>
 </body>
