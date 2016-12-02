@@ -1,3 +1,4 @@
+var gameStatus = "incomplete";
 var playerOne = "X";
 var playerTwo = "O";
 var playersClick = document.getElementById("game-board");
@@ -17,9 +18,10 @@ var squareEight;
 var squareNine;
 
 // excecuteTurn changes innerText of the HTML tags "td" based on the users click location. Also alternates between "X" and "O" each turn and checks that the clicked locations innerText is empty to ensure a previously clicked location cannot be over-written
-
 var excecuteTurn = function(e) {
+  if (gameStatus === "incomplete") {
     if (e.target.innerText === "") {
+        // changes the whosTurn variable to alternate between "X" and "O" on each turn
         e.target.innerText = whosTurn;
         if (whosTurn === playerOne) {
             whosTurn = playerTwo;
@@ -36,17 +38,25 @@ var excecuteTurn = function(e) {
         squareSeven = document.getElementById("7").innerText;
         squareEight = document.getElementById("8").innerText;
         squareNine = document.getElementById("9").innerText;
+        checkForWinner();
     }
-    // if statement to check if a player has 3 in a row - virtical, horizontal or diagonal and triggers the appropriate function to update DOM based on which player one
-    if (squareOne === "X" && squareTwo === "X" && squareThree === "X" || squareFour === "X" && squareFive === "X" && squareSix === "X" || squareSeven === "X" && squareEight === "X" && squareNine === "X" || squareOne === "X" && squareFour === "X" && squareSeven === "X" || squareTwo === "X" && squareFive === "X" && squareEight === "X" || squareThree === "X" && squareSix === "X" && squareNine === "X" || squareOne === "X" && squareFive === "X" && squareNine === "X" || squareThree === "X" && squareFive === "X" && squareSeven === "X") {
-        setTimeout(playerOneWins, 100); // delays alert so it doesn't appear before the last box the winner click is populated
-    }
-    if (squareOne === "O" && squareTwo === "O" && squareThree === "O" || squareFour === "O" && squareFive === "O" && squareSix === "O" || squareSeven === "O" && squareEight === "O" && squareNine === "O" || squareOne === "O" && squareFour === "O" && squareSeven === "O" || squareTwo === "O" && squareFive === "O" && squareEight === "O" || squareThree === "O" && squareSix === "O" && squareNine === "O" || squareOne === "O" && squareFive === "O" && squareNine === "O" || squareThree === "O" && squareFive === "O" && squareSeven === "O") {
-        setTimeout(playerTwoWins, 100);
-    } else if (squareOne && squareTwo && squareThree && squareFour && squareFive && squareSix && squareSeven && squareEight && squareNine === "X" || squareOne && squareTwo && squareThree && squareFour && squareFive && squareSix && squareSeven && squareEight && squareNine === "O") {
-        setTimeout(draw, 100);
-    }
+  }
 }
+
+
+// compares the string from each 'square' variable and compares them in each possible winning combination for each player
+var checkForWinner = function() {
+  if (squareOne === "X" && squareTwo === "X" && squareThree === "X" || squareFour === "X" && squareFive === "X" && squareSix === "X" || squareSeven === "X" && squareEight === "X" && squareNine === "X" || squareOne === "X" && squareFour === "X" && squareSeven === "X" || squareTwo === "X" && squareFive === "X" && squareEight === "X" || squareThree === "X" && squareSix === "X" && squareNine === "X" || squareOne === "X" && squareFive === "X" && squareNine === "X" || squareThree === "X" && squareFive === "X" && squareSeven === "X") {
+      playerOneWins();
+  }
+  if (squareOne === "O" && squareTwo === "O" && squareThree === "O" || squareFour === "O" && squareFive === "O" && squareSix === "O" || squareSeven === "O" && squareEight === "O" && squareNine === "O" || squareOne === "O" && squareFour === "O" && squareSeven === "O" || squareTwo === "O" && squareFive === "O" && squareEight === "O" || squareThree === "O" && squareSix === "O" && squareNine === "O" || squareOne === "O" && squareFive === "O" && squareNine === "O" || squareThree === "O" && squareFive === "O" && squareSeven === "O") {
+      playerTwoWins();
+  }
+  else if (squareOne && squareTwo && squareThree && squareFour && squareFive && squareSix && squareSeven && squareEight && squareNine === "X" || squareOne && squareTwo && squareThree && squareFour && squareFive && squareSix && squareSeven && squareEight && squareNine === "O") {
+      draw();
+  }
+}
+
 
 var playerOneWins = function() {
     if (document.getElementsByTagName("h1")[0].innerText === "naughts & crosses") {
@@ -54,6 +64,7 @@ var playerOneWins = function() {
         document.getElementById("header").style.display = "none";
         document.getElementById("player-one-winner").style.display = "block";
         document.getElementById("reset").style.visibility = "visible";
+        gameStatus = "completed";
     }
 }
 
@@ -63,6 +74,7 @@ var playerTwoWins = function() {
         document.getElementById("header").style.display = "none";
         document.getElementById("player-two-winner").style.display = "block";
         document.getElementById("reset").style.visibility = "visible";
+        gameStatus = "completed";
     }
 }
 
@@ -71,6 +83,7 @@ var draw = function() {
         document.getElementById("header").style.display = "none";
         document.getElementById("draw").style.display = "block";
         document.getElementById("reset").style.visibility = "visible";
+        gameStatus = "completed";
     }
 }
 

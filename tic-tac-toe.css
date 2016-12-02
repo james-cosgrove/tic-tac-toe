@@ -1,7 +1,7 @@
 body {
   font-family: "Helvetica Neue";
   text-align: center;
-  background: url("");
+  background: rgb(252, 222, 171);
 }
 
 h1 {
@@ -12,27 +12,7 @@ h1 {
   margin-top: 0;
 }
 
-#player-one-winner {
-  display: none;
-  font-family: "Helvetica Neue";
-  font-weight: 300;
-  font-size: 100px;
-  letter-spacing: 15px;
-  margin-bottom: 64px;
-  margin-top: 20px;
-}
-
-#player-two-winner {
-  display: none;
-  font-family: "Helvetica Neue";
-  font-weight: 300;
-  font-size: 100px;
-  letter-spacing: 15px;
-  margin-bottom: 64px;
-  margin-top: 20px;
-}
-
-#draw {
+.game-finished {
   display: none;
   font-family: "Helvetica Neue";
   font-weight: 300;
@@ -53,12 +33,12 @@ button {
   font-family: "HelveTica Neue";
   border-radius: 4px;
   border: 0;
-  background-color: rgb(255, 153, 51);
+  background-color: rgb(255, 133, 51);
   box-shadow: 5px 5px 5px #888888;
 }
 
 button:hover {
-  background-color: rgb(257, 110, 56);
+  background-color: rgb(247, 110, 56);
 }
 
 button:focus {
@@ -82,51 +62,26 @@ td {
   font-size: 105px;
   text-align: center;
   font-weight: 600;
-  color: rgb(90, 90, 90);
-  /*color: rgb(117, 198, 168);*/
+  color: rgb(80, 80, 80);
   width: 130px;
   height: 130px;
-  border: 10px solid rgb(255, 153, 51);
+  border: 10px solid rgb(233, 133, 51);
   cursor: pointer;
   font-family: 'Varela Round', sans-serif;
 }
 
-tr {
-  margin: ;
+tr:first-child td {
+  border-top: none;
 }
 
-.top-left {
-  border-top: 0px;
-  border-left: 0px;
+tr:last-child td {
+  border-bottom: none;
 }
 
-.top-right {
-  border-top: 0px;
-  border-right: 0px;
+tr td:first-child {
+  border-left: none;
 }
 
-.bottom-left {
-  border-bottom: 0px;
-  border-left: 0px;
-}
-
-.bottom-right {
-  border-bottom: 0px;
-  border-right: 0px;
-}
-
-.top {
-  border-top: 0px;
-}
-
-.right {
-  border-right: 0px;
-}
-
-.bottom {
-  border-bottom: 0px;
-}
-
-.left {
-  border-left: 0px;
+tr td:last-child {
+  border-right: none;
 }
