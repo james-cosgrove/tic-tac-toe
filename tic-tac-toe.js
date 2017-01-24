@@ -21,15 +21,15 @@ var boardArray = [
 
 // storing the innerText content in variables to be able to check of a player has 3 in a row - check for winner
 
-var squareOne;
-var squareTwo;
-var squareThree;
-var squareFour;
-var squareFive;
-var squareSix;
-var squareSeven;
-var squareEight;
-var squareNine;
+// var squareOne;
+// var squareTwo;
+// var squareThree;
+// var squareFour;
+// var squareFive;
+// var squareSix;
+// var squareSeven;
+// var squareEight;
+// var squareNine;
 
 // function to create the game board. Defaults to 3 x 3 when the page is loaded
 var createGameBoard = function() {
