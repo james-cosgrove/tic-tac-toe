@@ -1,7 +1,7 @@
 body {
   font-family: "Helvetica Neue";
   text-align: center;
-  background: url("");
+  background: rgb(255, 238, 214);
 }
 
 h1 {
@@ -84,20 +84,12 @@ td {
   height: 130px;
 }
 
-#game-board-2 td {
+#game-board td {
   font-size: 80px;
   font-weight: 500;
   height: 96px;
   width: 96px;
   border-width: 8px;
-}
-
-#game-board-3 td {
-  font-size: 63px;
-  font-weight: 400;
-  height: 76px;
-  width: 76px;
-  border-width: 6px;
 }
 
 tr:first-child td {
