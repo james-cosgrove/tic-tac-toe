@@ -19,6 +19,7 @@ var squareNine;
 
 // excecuteTurn changes innerText of the HTML tags "td" based on the users click location. Also alternates between "X" and "O" each turn and checks that the clicked locations innerText is empty to ensure a previously clicked location cannot be over-written
 var excecuteTurn = function(e) {
+  e.target.classList.add('fade-in');
   if (gameStatus === "incomplete") {
     if (e.target.innerText === "") {
         // changes the whosTurn variable to alternate between "X" and "O" on each turn
@@ -38,10 +39,12 @@ var excecuteTurn = function(e) {
         squareSeven = document.getElementById("7").innerText;
         squareEight = document.getElementById("8").innerText;
         squareNine = document.getElementById("9").innerText;
-        checkForWinner();
     }
+    setTimeout(function(){
+      checkForWinner()
+    }, 3000);
   }
-}
+};
 
 
 // compares the string from each 'square' variable and compares them in each possible winning combination for each player
@@ -59,7 +62,7 @@ var checkForWinner = function() {
 
 
 var playerOneWins = function() {
-    if (document.getElementsByTagName("h1")[0].innerText === "naughts & crosses") {
+    if (document.getElementsByTagName("h1")[0].innerText === "noughts & crosses") {
         document.getElementsByTagName("h1")[0].innerText = "game completed";
         document.getElementById("header").style.display = "none";
         document.getElementById("player-one-winner").style.display = "block";
@@ -69,7 +72,7 @@ var playerOneWins = function() {
 }
 
 var playerTwoWins = function() {
-    if (document.getElementsByTagName("h1")[0].innerText === "naughts & crosses") {
+    if (document.getElementsByTagName("h1")[0].innerText === "noughts & crosses") {
         document.getElementsByTagName("h1")[0].innerText = "game completed";
         document.getElementById("header").style.display = "none";
         document.getElementById("player-two-winner").style.display = "block";
@@ -79,7 +82,7 @@ var playerTwoWins = function() {
 }
 
 var draw = function() {
-    if (document.getElementsByTagName("h1")[0].innerText === "naughts & crosses") {
+    if (document.getElementsByTagName("h1")[0].innerText === "noughts & crosses") {
         document.getElementById("header").style.display = "none";
         document.getElementById("draw").style.display = "block";
         document.getElementById("reset").style.visibility = "visible";
