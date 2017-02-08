@@ -1,8 +1,10 @@
-#![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #4: The WDI Conf website (Brochure Site)
+#![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #1: Tic Tac Toe Game
 
 ### Overview
 
-Our main goal was to create the landing page of the WDI Conf experience. This page allows attendees to view details of any of the planned presentations at the conference held at GA Melbourne. Working as a team the WDI-10 class created the official WDI Conf online experience™.
+- Individual Project
+
+Create a tic tac toe (nought & crosses) game to render in the browser using HTML, JavaScript and CSS.
 
 ---
 
@@ -17,13 +19,22 @@ Our main goal was to create the landing page of the WDI Conf experience. This pa
 - Deploy your game online, where the rest of the world can access it
 - Use semantic markup for HTML and CSS (adhere to best practices)
 
---
+---
+
+### Necessary Deliverables
+
+- A working game, built by you, hosted somewhere on the internet
+- A link to your hosted working game in the URL section of your GitHub repo
+- A git repository hosted on GitHub, with a link to your hosted game, and frequent commits dating back to the very beginning of the project
+- A README.md file with explanations of the technologies used, the approach taken, installation instructions, unsolved problems, etc.
+
+---
 
 ### Technologies Used
 
  - HTML, CSS, JavaScript
 
---
+---
 
 ### White-boarding/Initial planning
 
