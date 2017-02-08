@@ -1,7 +1,9 @@
 body {
   font-family: "Helvetica Neue";
   text-align: center;
-  background: rgb(252, 222, 171);
+  background: #FF4E50; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #FF4E50 , #F9D423); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #FF4E50 , #F9D423); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 h1 {
@@ -10,6 +12,7 @@ h1 {
   letter-spacing: 15px;
   margin-bottom: -20px;
   margin-top: 0;
+  color: rgb(30, 30, 30);
 }
 
 .game-finished {
@@ -22,33 +25,45 @@ h1 {
   margin-top: 20px;
 }
 
-button {
+.reset-button {
   visibility: hidden;
   cursor: pointer;
-  color: rgb(90, 90, 90);
+  color: rgb(30, 30, 30);
   width: 400px;
   height: 60px;
   font-size: 40px;
   font-weight: 400;
-  font-family: "HelveTica Neue";
-  border-radius: 4px;
-  border: 0;
-  background-color: rgb(255, 133, 51);
-  box-shadow: 5px 5px 5px #888888;
+  font-family: "Helvetica Neue";
+  -webkit-transition: all 200ms ease-in;
+  -webkit-transform: scale(1);
+  -ms-transition: all 200ms ease-in;
+  -ms-transform: scale(1);
+  -moz-transition: all 200ms ease-in;
+  -moz-transform: scale(1);
+  transition: all 200ms ease-in;
+  transform: scale(1);
 }
 
-button:hover {
-  background-color: rgb(247, 110, 56);
+.reset-button:hover {
+  -webkit-transition: all 200ms ease-in;
+  -webkit-transform: scale(1.2);
+  -ms-transition: all 200ms ease-in;
+  -ms-transform: scale(1.2);
+  -moz-transition: all 200ms ease-in;
+  -moz-transform: scale(1.2);
+  transition: all 200ms ease-in;
+  transform: scale(1.2);
 }
 
-button:focus {
+/*.reset-button:focus {
   outline: 0;
   box-shadow: none;
-}
+}*/
 
 h5 {
   margin-top: 40px;
   font-weight: 400;
+  color: rgb(30, 30, 30);
 }
 
 table {
@@ -61,13 +76,23 @@ table {
 td {
   font-size: 105px;
   text-align: center;
-  font-weight: 600;
-  color: rgb(80, 80, 80);
+  font-weight: 400;
+  color: rgb(30, 30, 30);
   width: 130px;
   height: 130px;
-  border: 10px solid rgb(233, 133, 51);
+  border: 7px solid rgb(30, 30, 30);
   cursor: pointer;
   font-family: 'Varela Round', sans-serif;
+  opacity: 0;
+}
+
+td.fade-in {
+  opacity: 1;
+  -webkit-transition: opacity ease-in 0.3s;
+  -moz-transition: opacity ease-in 0.3s;
+  -ms-transition: opacity ease-in 0.3s;
+  -o-transition: opacity ease-in 0.3s;
+  transition: opacity ease-in 0.3s;
 }
 
 tr:first-child td {
@@ -84,4 +109,13 @@ tr td:first-child {
 
 tr td:last-child {
   border-right: none;
+}
+
+footer p {
+  color: rgb(230,230,230);
+  letter-spacing: 0.8px;
+  text-align: right;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 300;
 }
