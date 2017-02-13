@@ -38,13 +38,9 @@ Create a tic tac toe (nought & crosses) game to render in the browser using HTML
 
 ### White-boarding/Initial planning
 
+---
+
 ### Process/Approach Taken
-
-
-
-### Overview
-
-Make a front end Tic Tac Toe app  
 
 ---
 
@@ -52,7 +48,7 @@ Make a front end Tic Tac Toe app
 
  - Limited time constraints
  - Trying to keep code dry whilst meeting the design brief
- -
+ - Making sure my commits were frequent and atomic
  - The project would have benefited from the use of a project leader/coordinator to help guide logistics
 
 ---
